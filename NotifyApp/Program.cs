@@ -1,39 +1,46 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NotifyApp.BackgroundWorkers;
+using NotifyApp.Communication;
 using NotifyApp.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NotifyApp
 {
-    static class Program
+    public static class program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static async Task Main()
+        [System.STAThreadAttribute()]
+        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.8.1.0")]
+        public static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            await CreateHostBuilder().Build().RunAsync();
+            CreateHostBuilder().Build().Run();
         }
 
-        static IHostBuilder CreateHostBuilder()
+        private static IHostBuilder CreateHostBuilder()
         {
-            return Host.CreateDefaultBuilder()
-                .ConfigureServices(
-                (context, services) => {
-                    services.AddHostedService<Worker>();
-                    services.AddHostedService<NotifiedServiceApplicationContext>();
-                    services.AddSingleton<IconInformerService>();
-                }
-                );
+            var host = Host.CreateDefaultBuilder()
+                   .ConfigureServices(
+                   (context, services) => {
+                    // Register all Dependencies
+                    services.AddSingleton<ICommunicationHub, CommunicationHub>();
+                       services.AddSingleton<IconInformerService>();
+
+                    // Register all Background Services
+                    services.AddHostedService<Listener>();
+                       services.AddHostedService<ScrapeEngine>();
+                       services.AddHostedService<AutomationService>();
+
+                    // Finally Register Notified Service
+                    // This service needs to be registered last
+                    // since this is the UI thread 
+                    services.AddHostedService<OrchestrationManager>();
+                   });
+            return host;
         }
+
     }
 }
