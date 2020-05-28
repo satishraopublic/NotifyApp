@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace NotifyApp
 {
-    public class TrayIconApplicationContext : CommunicatorApplicationContext
+    public class TrayIconApplication : CommunicatorApplication
     {
         private System.Windows.Controls.ContextMenu _contextMenu;
         protected System.Windows.Controls.ContextMenu ContextMenu
@@ -23,7 +23,7 @@ namespace NotifyApp
             get { return _notifyIcon; }
         }
 
-        protected TrayIconApplicationContext(ICommunicationHub communicationHub, string notifyIconText) : base(communicationHub)
+        protected TrayIconApplication(ICommunicationHub communicationHub, string notifyIconText) : base(communicationHub)
         {
             Dispatcher.Invoke(() =>
             {

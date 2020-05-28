@@ -14,7 +14,7 @@ using System.Windows;
 
 namespace NotifyApp
 {
-    public class OrchestrationManager : TrayIconApplicationContext, IHostedService
+    public class OrchestrationManager : TrayIconApplication, IHostedService
     {
         IconInformerService _iconInformer;
 
@@ -105,6 +105,7 @@ namespace NotifyApp
 
         protected Task ExecuteAsync(CancellationToken stoppingToken)
         {
+
             return Task.CompletedTask;
         }
 

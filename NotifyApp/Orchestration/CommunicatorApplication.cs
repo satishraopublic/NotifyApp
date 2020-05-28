@@ -7,12 +7,13 @@ using System.Windows;
 
 namespace NotifyApp
 {
-    public class CommunicatorApplicationContext : Application, ICommunicationParticipant
+    public class CommunicatorApplication : Application, ICommunicationParticipant
     {
         protected ICommunicationHub _communicationHub;
-        public CommunicatorApplicationContext(ICommunicationHub communicationHub)
+        public CommunicatorApplication(ICommunicationHub communicationHub)
         {
             _communicationHub = communicationHub;
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
         }
 
         public virtual void ReceiveMessage(ICommunicationParticipant sender, object message)

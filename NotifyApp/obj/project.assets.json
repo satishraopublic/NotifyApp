@@ -1619,35 +1619,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Satish\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\srao\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\POCRoot\\NotifyApp\\NotifyApp\\NotifyApp.csproj",
+      "projectUniqueName": "M:\\pocroot\\NotifyApp\\NotifyApp\\NotifyApp.csproj",
       "projectName": "NotifyApp",
-      "projectPath": "D:\\POCRoot\\NotifyApp\\NotifyApp\\NotifyApp.csproj",
-      "packagesPath": "C:\\Users\\Satish\\.nuget\\packages\\",
-      "outputPath": "D:\\POCRoot\\NotifyApp\\NotifyApp\\obj\\",
+      "projectPath": "M:\\pocroot\\NotifyApp\\NotifyApp\\NotifyApp.csproj",
+      "packagesPath": "C:\\Users\\srao\\.nuget\\packages\\",
+      "outputPath": "M:\\pocroot\\NotifyApp\\NotifyApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Satish\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\srao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://raosystemsinc-1/MyNuget/nuget": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://proget.onbase.net/nuget/Nuget": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -1708,7 +1705,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
